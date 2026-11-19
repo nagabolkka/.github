@@ -1,6 +1,6 @@
 
 
-<img src="./assets/nagabolkka.svg" width="100%" alt="나가볼까?" />
+<img src="./assets/nagabolkka.svg" width="80%" alt="나가볼까?" />
 
 # 나가볼까? 🌙
 
