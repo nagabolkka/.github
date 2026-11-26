@@ -58,17 +58,18 @@
 
 ### 🎫 하루 한 장의 탑승권
 
-> 🛂 **출국 심사 (시작 체크)** → 🎫 **오늘의 탑승권** → ✂️ **작게 나눠 가기 · 난이도 바꾸기 · 쉬기** → 🖋️ **입국 심사 (기분 잉크 · 한 줄 회고)** → 💮 **입국 도장 · 섬 불빛** → ✈️ **다음 섬 탑승권**
+> 🛂 **출국 심사 (시작 체크)** → 🎫 **오늘의 탑승권** → 🎧 **루미랑 통화하며 가기 · 혼자 가기** → ✂️ **작게 나눠 가기 · 난이도 바꾸기 · 쉬기** → 🖋️ **입국 심사 (기분 잉크 · 한 줄 회고)** → 💮 **입국 도장 · 섬 불빛** → ✈️ **다음 섬 탑승권**
 
 출국 심사 8문항으로 첫 섬이 정해지고 첫 탑승권이 발급돼요. 하루 1장의 탑승권이 지금 있는 곳 근처의 실제 장소와 함께 나오고, 부담되면 3단계로 나눠 가거나 홈에서 난이도를 한 번 쉽게 · 어렵게 바꿀 수 있어요.
-그날 기분은 도장의 **잉크 색**이 되어 여권에 남아요. 기분이 좋았던 날은 다음 퀘스트가 한 단계 어려워지고, 힘들었거나 쉬어 간 날은 한 단계 쉬워져요.
+탑승할 때는 **혼자 가 볼지, 루미랑 통화하며 갈지** 고를 수 있어요. 통화를 고르면 루미가 먼저 말을 걸고, 가는 길을 작게 나눠 응원하거나 숨 고르기를 함께해요. 비행 중에도 언제든 루미를 다시 부를 수 있어요.
+그날 기분은 도장의 **잉크 색**이 되어 여권에 남고, 도감에는 처음 받은 날과 함께 찍혀요. 기분이 좋았던 날은 다음 퀘스트가 한 단계 어려워지고, 힘들었거나 쉬어 간 날은 한 단계 쉬워져요.
 
 ### 🗺️ 바깥과 이어지는 곳
 
 > 📍 **동네 지도** · 🎭 **입국 심사 연습실** · 🌈 **꿈 준비** · 📖 **여행 일지** · 💌 **루미의 엽서**
 
 내 위치 근처의 공원 · 도서관 · 주민 공간 · 청년 공간을 둘러보고 **비자로 담아** 다음 퀘스트로 받을 수 있어요.
-연습실에서는 첫 전화 · 첫 방문 · 모의 면접을 AI 상대역과 미리 연습하고, 끝나면 연습한 그대로 해 볼 수 있는 실제 퀘스트를 받아요.
+연습실에서는 첫 전화 · 첫 방문 · 모의 면접을 AI 상대역과 글이나 말로 미리 연습하고, 끝나면 연습한 그대로 해 볼 수 있는 실제 퀘스트를 받아요.
 꿈(목표)은 처음부터 고르지 않아도 돼요. 준비가 되면 **나 탭 → 꿈의 섬 입국 신고서**에서 고르고, 4단계로 나눠 하나씩 체크해요.
 매주 월요일에는 루미가 지난 한 주를 돌아보는 엽서를 보내요.
 
@@ -76,7 +77,7 @@
 
 > 🆘 **위기 표현 감지** · ☎️ **도움 받기** · 🔒 **마음 기록 보호**
 
-회고와 연습 대화에서 위기 표현이 감지되면 연출 없이 바로 **도움 받기** 화면으로 안내해요. 24시간 상담 번호와 내 위치에서 가장 가까운 정신건강복지센터를 보여 줘요.
+회고와 연습 대화에서 위기 표현이 감지되면 연출 없이 바로 **도움 받기** 화면으로 안내해요. 루미와 통화하는 중에도 힘든 마음이 느껴지면 루미가 109 상담과 도움 받기를 알려 주고, 통화 화면에는 늘 도움 받기 버튼이 있어요. 24시간 상담 번호와 내 위치에서 가장 가까운 정신건강복지센터를 보여 줘요.
 기분 · 회고 · 연습 대화 같은 마음 기록은 관리자도 볼 수 없어요.
 
 <br/>
@@ -143,6 +144,8 @@
 
 - AI 서버는 외부에 공개하지 않고 백엔드에서만 내부 키로 호출해요
 - 루미 한마디 · 연습 대화 · 피드백 · 엽서는 OpenAI 가 실패하면 **미리 쓴 템플릿 문장**으로 대신해요
+- 루미와 통화할 수 없으면 안내만 하고, 혼자 가기로 그대로 퀘스트를 이어가요
+- 통화 음성은 서버를 거치지 않고, 브라우저에는 60초 뒤 만료되는 임시 키만 전달해요
 - 기상청이 실패하면 맑음, 카카오 로컬이 실패하면 미션 기본 장소로 이어가요
 - AI 를 기다리는 동안 DB 잠금을 잡지 않도록 **위기 검사 → 저장 → AI 한마디** 순서로 나눴어요
 
@@ -160,6 +163,9 @@
    │
    ▼
 ✂️ 나눠 가기 · 바꾸기 퀘스트마다 정해진 3단계 · 난이도 쉽게 / 어렵게 · 오늘은 쉬어도 OK
+   │
+   ▼
+🎧 루미 동행 통화     (선택) 퀘스트에 맞춘 실시간 음성 응원 · 최대 10분 · OpenAI Realtime
    │
    ▼
 🖋️ 입국 심사         기분 5단계 (= 도장 잉크 색) + 한 줄 회고 (선택 · 암호화 저장)
@@ -187,10 +193,9 @@
 ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat-square&logo=vite&logoColor=white)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS_4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 ![React Router](https://img.shields.io/badge/React_Router-CA4245?style=flat-square&logo=reactrouter&logoColor=white)
-![TanStack Query](https://img.shields.io/badge/TanStack_Query-FF4154?style=flat-square&logo=reactquery&logoColor=white)
-![Zustand](https://img.shields.io/badge/Zustand-443E38?style=flat-square)
 ![Axios](https://img.shields.io/badge/Axios-5A29E4?style=flat-square&logo=axios&logoColor=white)
 ![Kakao Map](https://img.shields.io/badge/Kakao_Map-FFCD00?style=flat-square&logo=kakao&logoColor=black)
+![WebRTC](https://img.shields.io/badge/WebRTC-333333?style=flat-square&logo=webrtc&logoColor=white)
 ![PWA](https://img.shields.io/badge/PWA-5A0FC8?style=flat-square&logo=pwa&logoColor=white)
 ![Firebase Cloud Messaging](https://img.shields.io/badge/Firebase_Cloud_Messaging-FFCA28?style=flat-square&logo=firebase&logoColor=black)
 ![Vercel](https://img.shields.io/badge/Vercel-000000?style=flat-square&logo=vercel&logoColor=white)
@@ -210,6 +215,7 @@
 ![Python](https://img.shields.io/badge/Python_3.12-3776AB?style=flat-square&logo=python&logoColor=white)
 ![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=flat-square&logo=fastapi&logoColor=white)
 ![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![OpenAI Realtime](https://img.shields.io/badge/OpenAI_Realtime-412991?style=flat-square&logo=openai&logoColor=white)
 
 **External API**
 
